@@ -1,0 +1,39 @@
+<br><br>
+<div class="btn-group">
+  <input type="text" class="form-control" id="buscar" placeholder="buscar persona" [(ngModel)]='buscar'>
+  <button class="btn btn-primary" (click)='consulPersona();'>consultar</button>
+</div>
+
+<br><br>
+
+
+<table class="table table-bordered">
+
+  <tr>
+    <td> num_identificacion</td>
+    <td>nombre</td>
+    <td>apellido</td>
+    <td>telefono</td>
+    <td>direccion</td>
+  </tr>
+
+  <tr >
+     <td>45333</td>
+    <td>Eduardo</td>
+    <td>Martinez</td>
+    <td>4491234567</td>
+    <td>apolinar #123</td>
+    <td>
+      <button type="button" (click)="onEdit(personalista)" class="btn btn-outline-danger btn-sm">
+        Edit
+      </button>
+    </td>
+    <td>
+
+      <button type="button" (click)="onDelete(personalista.$keyRegistro)" class="btn btn-outline-danger btn-sm">
+        Delete
+      </button>
+    </td>
+  </tr>
+
+</table>

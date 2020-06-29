@@ -1,123 +1,107 @@
 <div class="main-content">
-  <div class="container-fluid">
-      <div class="card">
-          <div class="card-header card-header-danger">
-              <h3 class="card-title">Notifications</h3>
-              <p class="card-category">Handcrafted by our friend
-                  <a target="_blank" href="https://github.com/mouse0270">Robert McIntosh</a>. Please checkout the
-                  <a href="http://bootstrap-notify.remabledesigns.com/" target="_blank">full documentation.</a>
-              </p>
-          </div>
-          <div class="card-body">
-              <div class="row">
-                  <div class="col-md-6">
-                      <h4 class="card-title">Notifications Style</h4>
-                      <div class="alert alert-info">
-                          <span>This is a plain notification</span>
-                      </div>
-                      <div class="alert alert-info">
-                          <button mat-button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                              <i class="material-icons">close</i>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6">
+                  <br>
+                  <h1>Datos Personales</h1>
+                  <br>
+            
+                  <form >
+  
+                      <input type="hidden" name="$keyRegistro"
+                        [(ngModel)]="personaService.selectedPersona.$keyRegistro">
+                    
+                      <label for="num_identificacion"><b>num_identificacion*</b></label>
+                    
+                      <input class="form-control" id="num_identificacion" name="num_identificacion" #num_identificacion="ngModel"
+                        [(ngModel)]="personaService.selectedPersona.num_identificacion">
+                    
+                      <br>
+                      <label for="nombre"><b>nombre*</b></label>
+                      <input type="text" class="form-control" name="nombre" id="nombre" #nombre="ngModel"
+                        [(ngModel)]="personaService.selectedPersona.nombre">
+                      <br>
+                    
+                      <label for="apellido"><b>apellido*</b></label>
+                      <input type="text" class="form-control" name="apellido" id="apellido" #apellido="ngModel"
+                        [(ngModel)]="personaService.selectedPersona.apellido">
+                      <br>
+                      <label for="telefono"><b>telefono*</b></label>
+                      <input type="text" class="form-control" name="telefono" id="telefono" #telefono="ngModel"
+                        [(ngModel)]="personaService.selectedPersona.telefono">
+                      <br>
+                      <label for="direccion"><b>direccion*</b></label>
+                      <input type="text" class="form-control" name="direccion" id="direccion" #direccion="ngModel"
+                        [(ngModel)]="personaService.selectedPersona.direccion">
+                      <br>
+                    
+                      <div class="text-center">
+                        <div class="btn-group btn-group-sm  text-center">
+                          <button class="btn btn-outline-primary form-control" type="submit" >
+                            Agregar persona
                           </button>
-                          <span>This is a notification with close button.</span>
+                    
+                        </div>
                       </div>
-                      <div class="alert alert-info alert-with-icon" data-notify="container">
-                          <i class="material-icons" data-notify="icon">add_alert</i>
-                          <button mat-button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                              <i class="material-icons">close</i>
-                          </button>
-                          <span data-notify="message">This is a notification with close button and icon.</span>
-                      </div>
-                      <div class="alert alert-info alert-with-icon" data-notify="container">
-                          <i class="material-icons" data-notify="icon">add_alert</i>
-                          <button mat-button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                              <i class="material-icons">close</i>
-                          </button>
-                          <span data-notify="message">This is a notification with close button and icon and have many lines. You can see that the icon and the close button are always vertically aligned. This is a beautiful notification. So you don't have to worry about the style.</span>
-                      </div>
+                    
+                    
+                    </form>
                   </div>
-                  <div class="col-md-6">
-                      <h4 class="card-title">Notification states</h4>
-                      <div class="alert alert-info">
-                          <button mat-button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                              <i class="material-icons">close</i>
+   <div class="col-md-6">
+                  <div class="btn-group">
+                      <input type="text" class="form-control" id="buscar" placeholder="buscar persona" [(ngModel)]='buscar'>
+                      <button class="btn btn-primary" (click)='consulPersona();'>consultar</button>
+                    </div>
+                  <table class="table table-bordered">
+  
+                      <tr>
+                        <td> num_identificacion</td>
+                        <td>nombre</td>
+                        <td>apellido</td>
+                        <td>telefono</td>
+                        <td>direccion</td>
+                      </tr>
+                    
+                      <tu>{{personalista.num_identificacion}}</tu>
+                          <tu>{{personalista.nombre}}</tu>
+                          <tu>{{personalista.apellido}}</tu>
+                          <tu>{{personalista.telefono}}</tu>
+                          <tu>{{personalista.direccion}}</tu>
+                      <tr >
+                       
+                          
+                        
+  
+  
+  
+  
+  
+  
+                         <td>45333</td>
+                        <td>Eduardo</td>
+                        <td>Martinez</td>
+                        <td>4491234567</td>
+                        <td>apolinar #123</td>
+                        <td>
+                          <button type="button" (click)="onEdit(personalista)" class="btn btn-outline-danger btn-sm">
+                            Edit
                           </button>
-                          <span>
-                              <b> Info - </b> This is a regular notification made with ".alert-info"</span>
-                      </div>
-                      <div class="alert alert-success">
-                          <button mat-button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                              <i class="material-icons">close</i>
+                        </td>
+                        <td>
+                    
+                          <button type="button" (click)="onDelete(personalista.$keyRegistro)" class="btn btn-outline-danger btn-sm">
+                            Delete
                           </button>
-                          <span>
-                              <b> Success - </b> This is a regular notification made with ".alert-success"</span>
-                      </div>
-                      <div class="alert alert-warning">
-                          <button mat-button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                              <i class="material-icons">close</i>
-                          </button>
-                          <span>
-                              <b> Warning - </b> This is a regular notification made with ".alert-warning"</span>
-                      </div>
-                      <div class="alert alert-danger">
-                          <button mat-button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                              <i class="material-icons">close</i>
-                          </button>
-                          <span>
-                              <b> Danger - </b> This is a regular notification made with ".alert-danger"</span>
-                      </div>
-                      <div class="alert alert-primary">
-                          <button mat-button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                              <i class="material-icons">close</i>
-                          </button>
-                          <span>
-                              <b> Primary - </b> This is a regular notification made with ".alert-primary"</span>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="col-md-12">
-              <div class="places-buttons">
-                  <div class="row">
-                      <div class="col-md-6 ml-auto mr-auto text-center">
-                          <h4 class="card-title">
-                              Notifications Places
-                              <p class="category">Click to view notifications</p>
-                          </h4>
-                      </div>
-                  </div>
-                  <div class="row">
-                      <div class="col-lg-8 col-md-10 ml-auto mr-auto">
-                          <div class="row">
-                              <div class="col-md-4">
-                                  <button mat-raised-button class="btn btn-danger btn-block" (click)="showNotification('top','left')">Top Left</button>
-                              </div>
-                              <div class="col-md-4">
-                                  <button mat-raised-button class="btn btn-danger btn-block" (click)="showNotification('top','center')">Top Center</button>
-                              </div>
-                              <div class="col-md-4">
-                                  <button mat-raised-button class="btn btn-danger btn-block" (click)="showNotification('top','right')">Top Right</button>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="row">
-                      <div class="col-lg-8 col-md-10 ml-auto mr-auto">
-                          <div class="row">
-                              <div class="col-md-4">
-                                  <button mat-raised-button class="btn btn-danger btn-block" (click)="showNotification('bottom','left')">Bottom Left</button>
-                              </div>
-                              <div class="col-md-4">
-                                  <button mat-raised-button class="btn btn-danger btn-block" (click)="showNotification('bottom','center')">Bottom Center</button>
-                              </div>
-                              <div class="col-md-4">
-                                  <button mat-raised-button class="btn btn-danger btn-block" (click)="showNotification('bottom','right')">Bottom Right</button>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-</div>
+                        </td>
+                      </tr>
+                    
+                    </table>
+            
+            
+                </div>
+             
+                </div>
+        </div>
+    
+    </div>
+  

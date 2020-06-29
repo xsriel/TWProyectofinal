@@ -8,6 +8,15 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 
+import {LineaComponent } from './component/linea/linea.component';
+
+//import { ChartsModule } from 'ng2-charts';
+
+
+
+
+import { AdminLayoutModule } from './layouts/admin-layout/admin-layout.module';
+
 
 import { AppComponent } from './app.component';
 
@@ -34,6 +43,15 @@ import {MatTableModule} from '@angular/material/table';
 import {MatCardModule} from '@angular/material/card';
 
 
+//FIREBASE
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { environment } from '../environments/environment';
+import { PersonaComponent } from './component/persona/persona.component';
+import { PersonalistComponent } from './component/personalist/personalist.component';
+
+
+
 
 @NgModule({
   imports: [
@@ -51,8 +69,14 @@ import {MatCardModule} from '@angular/material/card';
     MatGridListModule,
     MatTableModule,
     MatCardModule,
-    
 
+    AngularFireDatabaseModule,
+    AngularFireModule,
+    AngularFireModule.initializeApp(environment.firebase),FormsModule, ReactiveFormsModule,
+    AdminLayoutModule,
+ //ChartsModule,
+    
+    
     
 
 
@@ -63,6 +87,11 @@ import {MatCardModule} from '@angular/material/card';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    PersonaComponent,
+    PersonalistComponent,
+    //LineaComponent,
+    
+    
     
 
     

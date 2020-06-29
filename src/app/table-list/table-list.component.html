@@ -4,7 +4,7 @@
         <h1 class="display-3"></h1>
         <div class="container" >
             
-                <div class="col-sm" style="text-align: center;" >
+                <div class="col-sm" style="text-align: center;"#toRead >
                     <h1><strong>MISIÓN</strong></h1>
                     <p>La calidad total en el café es nuestra única misión, desde la selección más discriminatoria del
                         mejor grano, las mejores condiciones de almacenamiento y los tuestes más finos, hasta la
@@ -14,6 +14,9 @@
                         Nunca caer en prácticas comerciales que involucren el sacrificar calidad, procesos y frescura
                         para entrar a un mercado totalmente saturado donde lo único que conseguiremos es el desprestigio
                         de nuestra empresa.</p>
+                        <button (click)="start(toRead.textContent)"><i class="fas fa-wheelchair"></i> Inicio </button>
+                        <button (click)="pause()"> Pause </button>
+                        <button (click)="resume()"> Resume </button>
                 </div>
                 <div class="row" >
                     <div class="col-sm" style="text-align: center;" >
@@ -41,8 +44,8 @@
         </div>
         <hr>
         <div class="container" >
-            <div class="row">
-                <div class="col-sm">
+            <div class="row"#toRead >
+                <div class="col-sm" >
                     <h1><strong>VALORES</strong></h1>
                     <li><a><strong>COMPROMISO.</strong> Con nuestro país, con los clientes, con nosotros mismos, tenemos
                             una gran responsabilidad al ser embajadores del café mexicano en el mundo.</a></li>
@@ -69,6 +72,15 @@
             </div>
 
         </div>
+        <button (click)="start(toRead.textContent)"><i class="fas fa-wheelchair"></i> Inicio </button>
+  <button (click)="pause()"> Pause </button>
+  <button (click)="resume()"> Resume </button>
+  <br>
+  <select #langSelect *ngIf="speechData != null" (change)="setLanguage(langSelect.value)">
+    <option [value]="i" *ngFor="let voice of speechData.voices; let i = index;">
+      {{voice.name}} - {{voice.lang}}
+    </option>
+  </select>
     </div>
   </div>
   <br>

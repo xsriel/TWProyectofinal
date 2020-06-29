@@ -7,6 +7,10 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 
 
+import { ChartsModule } from 'ng2-charts';
+
+
+
 
 //MATERIAL
 import {MatTreeModule} from '@angular/material/tree';
@@ -26,16 +30,25 @@ import {MatCardModule} from '@angular/material/card';
     MatGridListModule,
     MatTableModule,
     MatCardModule,
+    ChartsModule,
+    
+    
+    
   ],
   declarations: [
     FooterComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    //LineaComponent,
+    
   ],
   exports: [
     FooterComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    
+    
+    
   ]
 })
 export class ComponentsModule { }

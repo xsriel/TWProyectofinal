@@ -12,7 +12,8 @@ export const ROUTES: RouteInfo[] = [
     { path: '/user-profile', title: 'Contacto',  icon:'person', class: '' },
     { path: '/table-list', title: 'Acerca de',  icon:'content_paste', class: '' },
     { path: '/typography', title: 'Preguntas Frecuentes',  icon:'library_books', class: '' },
-    { path: '/icons', title: 'Icons',  icon:'bubble_chart', class: '' }
+    { path: '/icons', title: 'Admin Grafica',  icon:'bubble_chart', class: '' },
+    { path: '/notifications', title: 'Admin Datos',  icon:'bubble_chart', class: '' }
 ];
 
 @Component({

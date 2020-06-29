@@ -18,6 +18,15 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
 
+
+
+
+import {LineaComponent } from '../../component/linea/linea.component';
+import { ChartsModule } from 'ng2-charts';
+
+
+
+
 @NgModule({
   imports: [
     CommonModule,
@@ -30,6 +39,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
+    ChartsModule
+    
   ],
   declarations: [
     DashboardComponent,
@@ -40,6 +51,10 @@ import {MatSelectModule} from '@angular/material/select';
     MapsComponent,
     NotificationsComponent,
     UpgradeComponent,
+    LineaComponent,
+  ],
+  exports: [
+    
   ]
 })
 
