@@ -4,9 +4,9 @@
         <h1 class="display-3"></h1>
         <div class="container" >
             
-                <div class="col-sm" style="text-align: center;"#toRead >
-                    <h1><strong>MISIÓN</strong></h1>
-                    <p>La calidad total en el café es nuestra única misión, desde la selección más discriminatoria del
+                <div class="col-sm" style="text-align: center;" >
+                    <h1 ><strong>MISIÓN</strong></h1>
+                    <p #toRead>La calidad total en el café es nuestra única misión, desde la selección más discriminatoria del
                         mejor grano, las mejores condiciones de almacenamiento y los tuestes más finos, hasta la
                         selección del mejor empaque donde quede al máximo la calidad, el aroma y frescura con que el
                         cliente lo recibe.
@@ -14,7 +14,7 @@
                         Nunca caer en prácticas comerciales que involucren el sacrificar calidad, procesos y frescura
                         para entrar a un mercado totalmente saturado donde lo único que conseguiremos es el desprestigio
                         de nuestra empresa.</p>
-                        <button (click)="start(toRead.textContent)"><i class="fas fa-wheelchair"></i> Inicio </button>
+                        <button (click)="start(toRead.textContent)"><i class="fas fa-wheelchair"></i> Play </button>
                         <button (click)="pause()"> Pause </button>
                         <button (click)="resume()"> Resume </button>
                 </div>
@@ -30,10 +30,10 @@
         <div class="container" >
             <div class="col-sm" style="text-align: center;" >
                 <h1><strong>VISIÓN</strong></h1>
-                <p>Posicionar el café mexicano como uno de los mejores del mundo a través de la utilización de alta
+                <p #toRead>Posicionar el café mexicano como uno de los mejores del mundo a través de la utilización de alta
                     tecnología,
                     materia prima de la mejor calidad y personal altamente calificado.</p>
-
+                    
             </div>
             <div class="row" style="text-align: center;" >
                 <div class="col-sm">
@@ -72,7 +72,7 @@
             </div>
 
         </div>
-        <button (click)="start(toRead.textContent)"><i class="fas fa-wheelchair"></i> Inicio </button>
+        <button (click)="start(toRead.textContent)"><i class="fas fa-wheelchair"></i> Play </button>
   <button (click)="pause()"> Pause </button>
   <button (click)="resume()"> Resume </button>
   <br>
