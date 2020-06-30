@@ -25,13 +25,13 @@ import {
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 
 
-//MATERIAL
-import {MatTreeModule} from '@angular/material/tree';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatListModule} from '@angular/material/list';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatTableModule} from '@angular/material/table';
-import {MatCardModule} from '@angular/material/card';
+// MATERIAL
+import { MatTreeModule } from '@angular/material/tree';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatTableModule } from '@angular/material/table';
+import { MatCardModule } from '@angular/material/card';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
@@ -44,7 +44,7 @@ import { environment } from '../environments/environment';
     ReactiveFormsModule,
     HttpModule,
     ComponentsModule,
-  
+
     RouterModule,
     AppRoutingModule,
     MatTreeModule,
@@ -53,17 +53,17 @@ import { environment } from '../environments/environment';
     MatGridListModule,
     MatTableModule,
     MatCardModule,
-    
 
-    
+
+
 
 
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
     }),
-    
 
-    
+
+
 
 
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
@@ -71,13 +71,13 @@ import { environment } from '../environments/environment';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    
 
-    
-   
-   
+
+
+
+
   ],
- 
+
   providers: [],
   bootstrap: [AppComponent]
 })

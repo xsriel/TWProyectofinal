@@ -1,7 +1,7 @@
 {
-  "name": "material-dashboard-angular",
-  "short_name": "material-dashboard-angular",
-  "theme_color": "#1976d2",
+  "name": "Cafexhito",
+  "short_name": "Café",
+  "theme_color": "#F9A593",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",
