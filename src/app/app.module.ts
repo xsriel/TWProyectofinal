@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MaterialModule} from './material/material.module';
+import { MaterialModule } from './material/material.module';
 import { CafesComponent } from './components/admin/cafes/cafes.component';
 import { ComidaComponent } from './components/comida/comida.component';
 import { TcafesComponent } from './components/tcafes/tcafes.component';
@@ -18,19 +18,20 @@ import { RegistrerComponent } from './components/users/registrer/registrer.compo
 import { Page404Component } from './components/page404/page404.component';
 import { ProfileComponent } from './components/users/profile/profile.component';
 import { HeroComponent } from './components/hero/hero.component';
-import {FormsModule} from '@angular/forms';
-import {environment} from '../environments/environment';
+import { FormsModule } from '@angular/forms';
+import { environment } from '../environments/environment';
 import { ReactiveFormsModule } from '@angular/forms';
-import {AngularFireModule} from '@angular/fire';
-import {AngularFireDatabaseModule} from '@angular/fire/database';
-import {AngularFireAuth} from '@angular/fire/auth';
-import {AngularFireStorageModule} from '@angular/fire/storage';
-import {HttpClientModule} from '@angular/common/http';
-import {AngularFirestore} from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { HttpClientModule } from '@angular/common/http';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { LoadingComponent } from './components/loading/loading.component';
 import { BebidasComponent } from './components/bebidas/bebidas.component';
 import { GraficaComponent } from './components/grafica/grafica.component';
 import { CarritocomprasComponent } from './components/carritocompras/carritocompras.component';
+import { FomularioContactoComponent } from './components/fomulario-contacto/fomulario-contacto.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +51,8 @@ import { CarritocomprasComponent } from './components/carritocompras/carritocomp
     LoadingComponent,
     BebidasComponent,
     GraficaComponent,
-    CarritocomprasComponent
+    CarritocomprasComponent,
+    FomularioContactoComponent
   ],
   imports: [
     BrowserModule,
@@ -63,9 +65,9 @@ import { CarritocomprasComponent } from './components/carritocompras/carritocomp
     AngularFireDatabaseModule,
     ReactiveFormsModule,
     AngularFireStorageModule
-    
+
   ],
-  providers: [AngularFireAuth,AngularFirestore],
+  providers: [AngularFireAuth, AngularFirestore],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
