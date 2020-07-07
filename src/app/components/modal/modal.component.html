@@ -1,0 +1,96 @@
+<button class="btn btn-primary float-right mb-3" data-toggle="modal" data-target="#modalproducto">Nuevo Producto</button>
+
+
+<div class="modal fade" id="modalproducto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <p class="modal-title" id="exampleModalLabel" class="h5">
+           {{!this.dataApi.selectedproducto.id ? 'Nuevo Producto' : 'Actualizar Producto'}}
+          </p>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form name="productoForm" #productoForm="ngForm" (ngSubmit)="onSaveProducto(productoForm)">
+            <input type="hidden" name="id" [(ngModel)]="this.dataApi.selectedproducto.id">
+            <input type="hidden" name="userUid" [value]="userUid">
+            <div class="form-group">
+              <label for="nombre" class="col-form-label">Nombre:</label>
+              <input type="text" class="form-control" name="nombre" [(ngModel)]="this.dataApi.selectedproducto.nombre">
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="tipo">Tipo</label>
+                <select name="tipo" class="form-control" [(ngModel)]="this.dataApi.selectedproducto.tipo">
+                  <option value="bebida">bebida</option>
+                  <option value="comida">comida</option>
+                </select>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="precio">Precio</label>
+                <input type="text" name="precio" class="form-control" placeholder="$" [(ngModel)]="this.dataApi.selectedproducto.precio">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="existencia">Existencia</label>
+              <input type="text" name="existencia" class="form-control" placeholder="Existencia" [(ngModel)]="this.dataApi.selectedproducto.existencia">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="oferta">Oferta</label>
+                <select name="oferta" class="form-control" [(ngModel)]="this.dataApi.selectedproducto.oferta">
+                  <option value="1">Sí</option>
+                  <option value="0">No</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="imagen">Imagen</label>
+                <input type="text" name="imagen" class="form-control" placeholder="Imagen" [(ngModel)]="this.dataApi.selectedproducto.imagen">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="link_facebook">Link Facebook</label>
+                <input type="text" name="link_facebook" class="form-control" placeholder="Link facebook" [(ngModel)]="this.dataApi.selectedproducto.link_facebook">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="descripcion" class="col-form-label">Descripcion:</label>
+              <textarea class="form-control" name="descripcion" [(ngModel)]="this.dataApi.selectedproducto.descripcion"></textarea>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" #btnClose data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Guardar Producto</button>
+            </div>
+          </form>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+<!--<div class="modal fade" id="modalproducto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">
+            
+          </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+       
+        </div>
+  
+      </div>
+    </div>
+  </div>-->

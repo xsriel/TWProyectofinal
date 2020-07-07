@@ -1,84 +1,71 @@
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { RouterModule } from '@angular/router';
 
-
-import { AppRoutingModule } from './app.routing';
-import { ComponentsModule } from './components/components.module';
-
-
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
-import { TableListComponent } from './table-list/table-list.component';
-import { TypographyComponent } from './typography/typography.component';
-import { IconsComponent } from './icons/icons.component';
-import { MapsComponent } from './maps/maps.component';
-import { NotificationsComponent } from './notifications/notifications.component';
-import { UpgradeComponent } from './upgrade/upgrade.component';
-import {
-  AgmCoreModule
-} from '@agm/core';
-import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-
-
-// MATERIAL
-import { MatTreeModule } from '@angular/material/tree';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatListModule } from '@angular/material/list';
-import { MatGridListModule } from '@angular/material/grid-list';
-import { MatTableModule } from '@angular/material/table';
-import { MatCardModule } from '@angular/material/card';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
-
-
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MaterialModule} from './material/material.module';
+import { CafesComponent } from './components/admin/cafes/cafes.component';
+import { ComidaComponent } from './components/comida/comida.component';
+import { TcafesComponent } from './components/tcafes/tcafes.component';
+import { CcomidaComponent } from './components/ccomida/ccomida.component';
+import { HomeComponent } from './components/home/home.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { ModalComponent } from './components/modal/modal.component';
+import { OfertasComponent } from './components/ofertas/ofertas.component';
+import { LoginComponent } from './components/users/login/login.component';
+import { RegistrerComponent } from './components/users/registrer/registrer.component';
+import { Page404Component } from './components/page404/page404.component';
+import { ProfileComponent } from './components/users/profile/profile.component';
+import { HeroComponent } from './components/hero/hero.component';
+import {FormsModule} from '@angular/forms';
+import {environment} from '../environments/environment';
+import { ReactiveFormsModule } from '@angular/forms';
+import {AngularFireModule} from '@angular/fire';
+import {AngularFireDatabaseModule} from '@angular/fire/database';
+import {AngularFireAuth} from '@angular/fire/auth';
+import {AngularFireStorageModule} from '@angular/fire/storage';
+import {HttpClientModule} from '@angular/common/http';
+import {AngularFirestore} from '@angular/fire/firestore';
+import { LoadingComponent } from './components/loading/loading.component';
+import { BebidasComponent } from './components/bebidas/bebidas.component';
+import { GraficaComponent } from './components/grafica/grafica.component';
+import { CarritocomprasComponent } from './components/carritocompras/carritocompras.component';
 @NgModule({
-  imports: [
-    BrowserAnimationsModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpModule,
-    ComponentsModule,
-
-    RouterModule,
-    AppRoutingModule,
-    MatTreeModule,
-    MatToolbarModule,
-    MatListModule,
-    MatGridListModule,
-    MatTableModule,
-    MatCardModule,
-
-
-
-
-
-    AgmCoreModule.forRoot({
-      apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
-    }),
-
-
-
-
-
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
-  ],
   declarations: [
     AppComponent,
-    AdminLayoutComponent,
-
-
-
-
-
+    CafesComponent,
+    ComidaComponent,
+    TcafesComponent,
+    CcomidaComponent,
+    HomeComponent,
+    NavbarComponent,
+    ModalComponent,
+    OfertasComponent,
+    LoginComponent,
+    RegistrerComponent,
+    Page404Component,
+    ProfileComponent,
+    HeroComponent,
+    LoadingComponent,
+    BebidasComponent,
+    GraficaComponent,
+    CarritocomprasComponent
   ],
-
-  providers: [],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule,
+    ReactiveFormsModule,
+    AngularFireStorageModule
+    
+  ],
+  providers: [AngularFireAuth,AngularFirestore],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
