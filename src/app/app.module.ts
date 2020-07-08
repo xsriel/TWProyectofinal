@@ -1,3 +1,4 @@
+import { MessageService } from './services/message.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -32,6 +33,9 @@ import { BebidasComponent } from './components/bebidas/bebidas.component';
 import { GraficaComponent } from './components/grafica/grafica.component';
 import { CarritocomprasComponent } from './components/carritocompras/carritocompras.component';
 import { FomularioContactoComponent } from './components/fomulario-contacto/fomulario-contacto.component';
+import { ContactoService } from './services/contacto.service';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,7 +71,7 @@ import { FomularioContactoComponent } from './components/fomulario-contacto/fomu
     AngularFireStorageModule
 
   ],
-  providers: [AngularFireAuth, AngularFirestore],
+  providers: [AngularFireAuth, AngularFirestore, ContactoService, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,4 @@
-export interface Roles{
+export interface Roles {
     editor?: boolean;
     admin?: boolean;
 }
@@ -9,4 +9,4 @@ export interface UserInterface {
     password?: string;
     photoUrl?: string;
     roles: Roles;
-  } 
+}
